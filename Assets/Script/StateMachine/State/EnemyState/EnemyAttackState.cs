@@ -139,6 +139,9 @@ namespace Assets.StateMachine.EnemyState
             _owner.statusCtrl.CanRecoverStamina = true;
 
             _owner.StartMove();
+
+            _owner.AnimationEvent_Left_StopHit();
+            _owner.AnimationEvent_Right_StopHit();
         }
     }
 }

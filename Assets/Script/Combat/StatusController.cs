@@ -268,16 +268,17 @@ public class StatusController : MonoBehaviour, IDamageable
 
         if (currentPoise > 0)
         {
-            isStagger = false;
+            //isStagger = false;
             if(_owner is IInterruptible owner)
             {
-                owner.TriggerHit();
+                if(!isStagger || isStagger && currentPoise >= maxPoise * 0.15f)
+                    owner.TriggerHit();
             }
         }
         else
         {
-            isStagger = true;
-            currentPoise = 0;
+            //isStagger = true;
+            currentPoise = Mathf.Max(0, currentPoise);
             if (_owner is IInterruptible owner)
             {
                 owner.TriggerStagger();
@@ -408,7 +409,7 @@ public class StatusController : MonoBehaviour, IDamageable
 
         if (currentPoise > 0)
         {
-            isStagger = false;
+            //isStagger = false;
 
             //if (IsPowerUp) return;
 
@@ -418,16 +419,18 @@ public class StatusController : MonoBehaviour, IDamageable
             }
             else
             {
-                interruptible?.TriggerHit();
+                if(!isStagger || isStagger && currentPoise >= maxPoise * 0.15f)
+                    interruptible?.TriggerHit();
             }
         }
         else
         {
-            if(isStagger == true)
+            /*if(isStagger == true)
             {
-                interruptible?.TriggerHit();
+                if(currentPoise < maxPoise * 0.15f)
+                    interruptible?.TriggerHit();
                 return;
-            }
+            }*/
             currentPoise = 0;
             interruptible?.TriggerStagger();
         }
@@ -437,9 +440,9 @@ public class StatusController : MonoBehaviour, IDamageable
     {
         VFXHelper.Play(_owner.transform, _owner.weaponCtrl.currentWeaponObj.transform, _owner.weaponCtrl.weaponData.weaponCombatData.ParrayVFX);
 
-        yield return new WaitForSecondsRealtime(0.18f);
+        yield return new WaitForSecondsRealtime(0.16f);
 
-        Time.timeScale = 0.01f;
+        Time.timeScale = 0.02f;
 
         yield return new WaitForSecondsRealtime(0.4f);
         Time.timeScale = 1f;

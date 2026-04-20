@@ -141,6 +141,9 @@ namespace Assets.StateMachine.PlayerState
             _owner.statusCtrl.CanRecoverStamina = true;
             _owner.statusCtrl.CanRecoverPoise = true;
 
+            _owner.AnimationEvent_Left_StopHit();
+            _owner.AnimationEvent_Right_StopHit();
+
             //_owner.AllowLockRotation = true;
         }
     }
