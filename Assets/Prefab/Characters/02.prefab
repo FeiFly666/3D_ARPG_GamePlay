@@ -2358,8 +2358,15 @@ MonoBehaviour:
   characterType: 1
   characterSex: 0
   currentState: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 136
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   weaponCtrl: {fileID: 0}
   statusCtrl: {fileID: 0}
+  targetSystem: {fileID: 0}
   lockedTarget: {fileID: 0}
   AllowLockRotation: 1
   weapons:

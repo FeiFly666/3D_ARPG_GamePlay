@@ -12,6 +12,8 @@ namespace Assets.StateMachine.EnemyState
     {
         private EnemyController _owner;
         private StateMachine<EnemyController> _fsm;
+
+        private float _targetSearchTimer = 0;
         public void Init(EnemyController owner, StateMachine<EnemyController> machine)
         {
             _owner = owner;
@@ -30,15 +32,17 @@ namespace Assets.StateMachine.EnemyState
             string nextAnim = _owner.anim.GetBool("IsLockOn") ? "LockOnForwardWalk" : "Walk";
             _owner.anim.CrossFadeInFixedTime(nextAnim, 0.15f);
 
+            _targetSearchTimer = 0;
+
+            _owner.InputMove = Vector2.zero;
+
             _owner.DisableAgent();
 
         }
         public void Update()
         {
-            
-            if(_owner.IsDetectPlayer())
+            if(_owner.IsDetectTarget())
             {
-                //TODO:追击玩家
                 _fsm.ChangeState<EnemyChaseState>();
                 if (_owner.characterType == CharacterType.Boss)
                 {
@@ -46,6 +50,19 @@ namespace Assets.StateMachine.EnemyState
                     _owner.statusCtrl.InvokeUIChange();
                 }
                 return;
+            }
+            else
+            {
+                _targetSearchTimer -= Time.deltaTime;
+                if (_targetSearchTimer < 0)
+                {
+                    _targetSearchTimer = 0.2f;
+                    CharacterBase newTarget = _owner.targetSystem.FindBestTarget();
+                    if(newTarget != null)
+                    {
+                        _owner.SetLockedTarget(newTarget);
+                    }
+                }
             }
 
         }

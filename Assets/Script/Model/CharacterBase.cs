@@ -50,8 +50,13 @@ namespace Model
 
         public CharacterState currentState;
 
+        public LayerMask enemyLayer;
+        public LayerMask obstacleLayer;
+
         public WeaponController weaponCtrl;
         public StatusController statusCtrl;
+
+        public TargetSystem targetSystem;
 
         public CharacterBase lockedTarget;
 
@@ -85,6 +90,9 @@ namespace Model
             statusCtrl = GetComponent<StatusController>();
             if (statusCtrl == null) statusCtrl = this.AddComponent<StatusController>();
 
+            targetSystem = GetComponent<TargetSystem>();
+            if(targetSystem == null) { targetSystem = this.AddComponent<TargetSystem>(); }
+
             //Init();
         }
         protected virtual void Start()
@@ -103,14 +111,21 @@ namespace Model
 
             weaponCtrl.Init(this, weapons[currentWeaponIndex]);
 
-        }
+            targetSystem.Init(enemyLayer, obstacleLayer, this);
 
-        public virtual void SetLockedTarget(Transform lockedTarget)
+        }
+        private void InitEnemyLayer()
         {
-            LockedTargetTransform = lockedTarget;
+
+        }
+        public virtual void SetLockedTarget(CharacterBase lockedTarget)
+        {
+            this.lockedTarget = lockedTarget;
+            LockedTargetTransform = lockedTarget.transform;
         }
         public virtual void UnLockTarget()
         {
+            lockedTarget = null;
             LockedTargetTransform = null;
         }
         public Vector3 GetLockedTargetPosition()

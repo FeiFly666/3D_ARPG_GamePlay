@@ -57,6 +57,8 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
     {
         base.Init();
 
+        targetSystem.ChangeMaxDistance( _detectDistance);
+
         stateMachine = new StateMachine<EnemyController>(this);
 
         stateMachine.Initialize<EnemyIdleState>();
@@ -77,16 +79,14 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
     {
         _blockTimer -= Time.deltaTime;
 
-        if (this.LockedTargetTransform == null)
+        if (this.LockedTargetTransform != null)
         {
-            this.LockedTargetTransform = Manager.Character.player.transform;
+            if (AllowLockRotation && IsLockOn)
+            {
+                RotateToLockTarget();
+            }
         }
-        if (this.LockedTargetTransform == null) return;
 
-        if (AllowLockRotation && IsLockOn)
-        {
-            RotateToLockTarget();
-        }
 
         stateMachine.Update();
         UpdateAnimator();
@@ -117,7 +117,7 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
     public void EnableAgent()
     {
         agent.updatePosition = true;
-        agent.updateRotation = true;
+        //agent.updateRotation = true;
 
         agent.Warp(transform.position);
 
@@ -141,7 +141,7 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
     }
     public float DisToTarget()
     {
-        return (this.transform.position - LockedTargetTransform.position).sqrMagnitude;
+        return LockedTargetTransform != null ? (this.transform.position - LockedTargetTransform.position).sqrMagnitude : float.MaxValue;
     }
     public float GetAttackRange()
     {
@@ -302,7 +302,7 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
     {
         this._attackDistance /= 2;
     }
-    public bool IsDetectPlayer()
+    public bool IsDetectTarget()
     {
         if(LockedTargetTransform == null) return false;
 
@@ -392,7 +392,7 @@ public class EnemyController : CharacterBase, IInterruptible, IRestrictMove
         if (LockedTargetTransform != null)
         {
             // 画一条线连向目标
-            Gizmos.color = IsDetectPlayer() ? Color.green : Color.gray;
+            Gizmos.color = IsDetectTarget() ? Color.green : Color.gray;
             Gizmos.DrawLine(transform.position + Vector3.up, LockedTargetTransform.position + Vector3.up);
 
             // 在目标头顶画个小方块

@@ -67,7 +67,7 @@ namespace Assets.StateMachine.EnemyState
                 _blockTimer = -10;
             }
 
-            if(Manager.Character.player.currentState == CharacterState.Attack && _blockTimer <= 0)
+            if(_owner.lockedTarget.currentState == CharacterState.Attack && _blockTimer <= 0)
             {
                 if (Random.value < 0.6f && dis <= 9f)
                 {
@@ -94,8 +94,8 @@ namespace Assets.StateMachine.EnemyState
             float xInput = _strafeDirection * index;
             float yInput = 0;
 
-            if (dis > 4f) yInput = 1f;
-            else if (dis < 0.81f) yInput = -1f;
+            if (dis > _owner.GetAttackRange()) yInput = 1f;
+            else if (dis < 1f) yInput = -1f;
 
             if(yInput != 0)
             {

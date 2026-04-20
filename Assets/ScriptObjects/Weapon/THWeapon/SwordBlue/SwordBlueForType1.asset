@@ -15,8 +15,11 @@ MonoBehaviour:
   ID: edebe369-8b39-4e8c-ae57-4d1545268d63
   weaponName: "\u84DD\u5251"
   weaponType: 2
-  weaponPrefab: {fileID: 2796305920483840857, guid: 02900a6be8ca6c54fa300c4fc81a6f61, type: 3}
+  weaponPrefab: {fileID: 3535584082281341272, guid: 314c9cbdb5f9ef84293652eb9af3a098, type: 3}
+  weaponPrefab2: {fileID: 0}
   attackRange: 2
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 90, y: 0, z: 0}
+  positionOffset2: {x: 0, y: 0, z: 0}
+  rotationOffset2: {x: 0, y: 0, z: 0}
   weaponCombatData: {fileID: 11400000, guid: 9d56d66f0ddcf234794a00653cca85d6, type: 2}

@@ -31,10 +31,10 @@ public class StatusController : MonoBehaviour, IDamageable
     public float maxStamina = 100f;
     public float currentStamina;
 
-    public float exhaustedStaminaRecoverDelay = 3f;
+    public float exhaustedStaminaRecoverDelay = 2f;
     public float normalStaminaRecoverDelay = 0.5f;
 
-    public float staminaRecoverRate = 10f;
+    public float staminaRecoverRate = 25f;
     private float _lastUseStaminaTime;
 
     public bool isExhausted { get; private set; }
@@ -322,7 +322,7 @@ public class StatusController : MonoBehaviour, IDamageable
         if(!FindEnemy)
         {
             FindEnemy = true;
-            _owner.SetLockedTarget(attacker.gameObject.transform);
+            _owner.SetLockedTarget(attacker);
             if(_owner.characterType == CharacterType.Boss)
             {
                 Manager.Event.Execute(EventManager.Event_Type.Boss_Find_Player, _owner as EnemyController);

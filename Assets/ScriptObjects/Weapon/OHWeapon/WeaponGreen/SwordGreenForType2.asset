@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponType: 1
   weaponPrefab: {fileID: 92870727942385310, guid: 619cf8de0e7465b469336957033927a1, type: 3}
   weaponPrefab2: {fileID: 92870727942385310, guid: 619cf8de0e7465b469336957033927a1, type: 3}
-  attackRange: 2
+  attackRange: 1.8
   positionOffset: {x: -0.000616, y: 0.002967, z: -0.000915}
   rotationOffset: {x: 15.623, y: 187.833, z: -0.301}
   positionOffset2: {x: -0.00112, y: 0.002899, z: 0.001075}

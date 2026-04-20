@@ -2156,7 +2156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296875216310452938, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.0769076
+      value: 61.9
       objectReference: {fileID: 0}
     - target: {fileID: 6296875216310452938, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2164,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296875216310452938, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3155947
+      value: 6.76
       objectReference: {fileID: 0}
     - target: {fileID: 6296875216310452938, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3386,6 +3386,10 @@ PrefabInstance:
     - target: {fileID: 2483007741608820262, guid: 94172e539cee61b468ba16d85f85d6ef, type: 3}
       propertyPath: m_Name
       value: Manbo(yuan)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483007741608820262, guid: 94172e539cee61b468ba16d85f85d6ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4984487617913676040, guid: 94172e539cee61b468ba16d85f85d6ef, type: 3}
       propertyPath: m_LocalPosition.x

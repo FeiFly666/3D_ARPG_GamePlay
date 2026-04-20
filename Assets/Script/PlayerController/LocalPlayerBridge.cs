@@ -2,6 +2,7 @@ using Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static UnityEngine.UI.GridLayoutGroup;
 
 public class LocalPlayerBridge : MonoBehaviour
@@ -10,7 +11,7 @@ public class LocalPlayerBridge : MonoBehaviour
     PlayerInputHandler input;
 
     PlayerCameraController cameraController;
-    TargetSystem targetSystem;
+    //TargetSystem targetSystem;
 
     private bool _canSwitch = true;
     private float _mouseTimer = 0;
@@ -21,7 +22,7 @@ public class LocalPlayerBridge : MonoBehaviour
         controller = GetComponent<PlayerController>();
         input = GetComponent<PlayerInputHandler>();
         cameraController = GetComponent<PlayerCameraController>();
-        targetSystem = GetComponent<TargetSystem>();
+        //targetSystem = GetComponent<TargetSystem>();
     }
     private void Start()
     {
@@ -49,7 +50,7 @@ public class LocalPlayerBridge : MonoBehaviour
 
                 controller.UnLockTarget();
 
-                targetSystem.ClearTarget();
+                controller.targetSystem.ClearTarget();
 
                 controller.IsLockOn = false;
             }
@@ -63,18 +64,34 @@ public class LocalPlayerBridge : MonoBehaviour
                 controller.StartSwitching();
                 cameraController.isSwitching = true;
             }
+            if(!controller.targetSystem.IsTargetVaild())
+            {
+                if(HandleTargetSwitch())
+                {
+                    controller.StartSwitching();
+                    cameraController.isSwitching = true;
+                }
+                else
+                {
+                    cameraController.StopLockOn();
+
+                    controller.UnLockTarget();
+
+                    controller.targetSystem.ClearTarget();
+
+                    controller.IsLockOn = false;
+                }
+            }
         }
     }
     bool HandleLockOnTarget()
     {
-        Transform newTarget = targetSystem.FindBestTarget();
-
-
+        CharacterBase newTarget = controller.targetSystem.FindBestTarget();
 
         if (newTarget != null)
         {
             controller.SetLockedTarget(newTarget);
-            cameraController.SetLockedEnemy(newTarget);
+            cameraController.SetLockedEnemy(newTarget.transform);
 
             return true;
         }
@@ -89,7 +106,7 @@ public class LocalPlayerBridge : MonoBehaviour
 
         if (Mathf.Abs(switchInput) > threshold && _canSwitch)
         {
-            Transform next = targetSystem.GetNextTarget(switchInput);
+            CharacterBase next = controller.targetSystem.GetNextTarget(switchInput);
 
             _canSwitch = false;
 
@@ -98,7 +115,7 @@ public class LocalPlayerBridge : MonoBehaviour
             if (next != null)
             {
                 controller.SetLockedTarget(next);
-                cameraController.SetLockedEnemy(next);
+                cameraController.SetLockedEnemy(next.transform);
 
                 return true;
             }

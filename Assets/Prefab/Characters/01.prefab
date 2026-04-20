@@ -12551,8 +12551,16 @@ MonoBehaviour:
   characterType: 0
   characterSex: 0
   currentState: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 192
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   weaponCtrl: {fileID: 0}
   statusCtrl: {fileID: 0}
+  targetSystem: {fileID: 0}
+  lockedTarget: {fileID: 0}
   AllowLockRotation: 1
   weapons:
   - {fileID: 11400000, guid: 7b071a73bf9a65c45b06ba2b5db0e21d, type: 2}
@@ -12607,6 +12615,7 @@ MonoBehaviour:
   negative: 5
   lockTarget: {fileID: 0}
   lockPivot: {fileID: 0}
+  lockfollow: {fileID: 0}
   playerCharacter: {fileID: 0}
   lockedEnemy: {fileID: 0}
   camState: 0
@@ -12647,6 +12656,7 @@ MonoBehaviour:
   leftHandSlot: {fileID: 0}
   rightHandSlot: {fileID: 0}
   currentWeaponObj: {fileID: 0}
+  currentWeaponObj2: {fileID: 0}
   currentWeaponType: 0
 --- !u!136 &416884423890466480
 CapsuleCollider:

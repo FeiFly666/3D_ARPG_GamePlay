@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1599902429469642496, guid: 3043cb435daaca9419ed80bf892653ab, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 3066699190671544119, guid: 3043cb435daaca9419ed80bf892653ab, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

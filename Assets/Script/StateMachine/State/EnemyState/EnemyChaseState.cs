@@ -32,6 +32,13 @@ namespace Assets.StateMachine.EnemyState
         public void Update()
         {
             //_owner.agent.nextPosition = _owner.transform.position;
+
+            if(_owner.lockedTarget == null)
+            {
+                _fsm.ChangeState<EnemyIdleState>();
+                return;
+            }
+
             float dist = _owner.DisToTarget();
 
             if (dist <= 16f)
