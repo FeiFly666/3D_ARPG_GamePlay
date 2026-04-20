@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c732bfb785810e41b4f1104a16d5240, type: 3}
+  m_Name: SwordBlueForType1
+  m_EditorClassIdentifier: 
+  ID: edebe369-8b39-4e8c-ae57-4d1545268d63
+  weaponName: "\u84DD\u5251"
+  weaponType: 2
+  weaponPrefab: {fileID: 2796305920483840857, guid: 02900a6be8ca6c54fa300c4fc81a6f61, type: 3}
+  attackRange: 2
+  positionOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 90, y: 0, z: 0}
+  weaponCombatData: {fileID: 11400000, guid: 9d56d66f0ddcf234794a00653cca85d6, type: 2}

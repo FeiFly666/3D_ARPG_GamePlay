@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf894d0d0fd4fa4aa6c84be4f1bcadd, type: 3}
+  m_Name: TuCi_1
+  m_EditorClassIdentifier: 
+  Name: "\u7EFF\u8272\u7A81\u523A"
+  Description: 
+  Type: 1
+  animName: TuCi
+  skillVFX:
+    VFXPrefab: {fileID: 4938925213241501392, guid: a17181c18e2b0db4ea1bf1cef1f3da0f, type: 3}
+    position: {x: -0.004, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  Cost: 50
+  attackLength: 20
+  attackWidth: 0.6
+  damageMultiplier: 10
+  poiseMultiplier: 10
+  duration: 10
+  multiplier: 1

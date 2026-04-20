@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a463d12e3c813d14b8c19407053a5c9b, type: 3}
+  m_Name: SwordGreenWeaponCombatData
+  m_EditorClassIdentifier: 
+  weaponDamage: 10
+  skill: {fileID: 11400000, guid: aed51949d23201f4381e90dcab42737a, type: 2}
+  femaleAnimatorOverride: {fileID: 22100000, guid: cca2a799e6ce1b4499725c41db2de421, type: 2}
+  maleAnimatorOverride: {fileID: 0}
+  ParrayVFX:
+    VFXPrefab: {fileID: 6050735462164387717, guid: ad8a3cbabe62c2943bac57fb5e696ea4, type: 3}
+    position: {x: -0.004, y: 0, z: 0}
+    rotation: {x: 90, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  combatData:
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 5
+    comboStaminaCost: 8
+    ComboVFX:
+      VFXPrefab: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 0, y: 0, z: 0}
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 10
+    comboStaminaCost: 8
+    ComboVFX:
+      VFXPrefab: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 0, y: 0, z: 0}
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 10
+    comboStaminaCost: 8
+    ComboVFX:
+      VFXPrefab: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 0, y: 0, z: 0}
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 10
+    comboStaminaCost: 8
+    ComboVFX:
+      VFXPrefab: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 0, y: 0, z: 0}
+  - cancelThreshold: 0.9
+    comboPoiseDamage: 15
+    comboStaminaCost: 15
+    ComboVFX:
+      VFXPrefab: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 0, y: 0, z: 0}

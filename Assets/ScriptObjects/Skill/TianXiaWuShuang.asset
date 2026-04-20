@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf894d0d0fd4fa4aa6c84be4f1bcadd, type: 3}
+  m_Name: TianXiaWuShuang
+  m_EditorClassIdentifier: 
+  Name: "\u5929\u4E0B\u65E0\u53CC"
+  Description: 
+  Type: 2
+  animName: 
+  skillVFX:
+    VFXPrefab: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  Cost: 50
+  attackRange: 10
+  damageMultiplier: 2
+  poiseMultiplier: 2
+  duration: 10
+  multiplier: 1

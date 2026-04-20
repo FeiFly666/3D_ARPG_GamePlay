@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a463d12e3c813d14b8c19407053a5c9b, type: 3}
+  m_Name: SwordBlueCombatData
+  m_EditorClassIdentifier: 
+  weaponDamage: 15
+  skill: {fileID: 11400000, guid: c337e30de6c71bf409cb4e01e1982276, type: 2}
+  femaleAnimatorOverride: {fileID: 22100000, guid: 2c3a09ffa7cc5bb44822d6a08a961005, type: 2}
+  maleAnimatorOverride: {fileID: 22100000, guid: 2c3a09ffa7cc5bb44822d6a08a961005, type: 2}
+  ParrayVFX:
+    VFXPrefab: {fileID: 4595738757166166616, guid: ea3b633e8839243459f92f87ddd3c729, type: 3}
+    position: {x: -0.004, y: 0, z: 0}
+    rotation: {x: 90, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  combatData:
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 10
+    comboStaminaCost: 5
+    ComboVFX:
+      VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
+      position: {x: 0.005, y: -0.005, z: -0.001}
+      rotation: {x: 180, y: 180, z: 8}
+      scale: {x: 1, y: 1, z: 1}
+  - cancelThreshold: 0.9
+    comboPoiseDamage: 20
+    comboStaminaCost: 10
+    ComboVFX:
+      VFXPrefab: {fileID: 2068366364774520939, guid: 99daffa3d66332e4ea98082665f10b4f, type: 3}
+      position: {x: 0.005, y: 0, z: 0}
+      rotation: {x: 0, y: 270, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 20
+    comboStaminaCost: 10
+    ComboVFX:
+      VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
+      position: {x: 0.005, y: -0.001, z: 0}
+      rotation: {x: 0, y: 0, z: 180}
+      scale: {x: 1, y: 1, z: 1}
+  - cancelThreshold: 0.8
+    comboPoiseDamage: 20
+    comboStaminaCost: 10
+    ComboVFX:
+      VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
+      position: {x: 0, y: -0.005, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+  - cancelThreshold: 1
+    comboPoiseDamage: 30
+    comboStaminaCost: 20
+    ComboVFX:
+      VFXPrefab: {fileID: 2068366364774520939, guid: 99daffa3d66332e4ea98082665f10b4f, type: 3}
+      position: {x: 0.0125, y: 0, z: 0}
+      rotation: {x: 0, y: 270, z: 0}
+      scale: {x: 1, y: 1, z: 1}

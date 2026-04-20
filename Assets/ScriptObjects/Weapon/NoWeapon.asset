@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c732bfb785810e41b4f1104a16d5240, type: 3}
+  m_Name: NoWeapon
+  m_EditorClassIdentifier: 
+  ID: 4b5cd29b-f56a-4b21-8473-649f3dc3743a
+  weaponName: "\u7A7A\u624B"
+  weaponType: 0
+  weaponPrefab: {fileID: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
+  weaponCombatData: {fileID: 11400000, guid: 925ed01ec1b39e440b0d086644dab682, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7e6702217a12a429ca47768a0affb2, type: 3}
+  m_Name: 11
+  m_EditorClassIdentifier: 
+  ID: 80301e20-c09b-4b8e-b77a-5f5d87c0a4a1
+  characterName: Els
+  fullHP: 300
+  atk: 5
+  def: 0
+  maxStamina: 100000
+  maxPoise: 80
+  walkSpeed: 2
+  runSpeed: 5
+  detectDistance: 10

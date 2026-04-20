@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c732bfb785810e41b4f1104a16d5240, type: 3}
+  m_Name: SwordGreenForType2
+  m_EditorClassIdentifier: 
+  ID: 2ce4579c-7f8b-4b26-bbf4-a1e341f92e35
+  weaponName: "\u7EFF\u7BAD"
+  weaponType: 1
+  weaponPrefab: {fileID: 92870727942385310, guid: 619cf8de0e7465b469336957033927a1, type: 3}
+  weaponPrefab2: {fileID: 92870727942385310, guid: 619cf8de0e7465b469336957033927a1, type: 3}
+  attackRange: 1.8
+  positionOffset: {x: -0.000616, y: 0.002967, z: -0.000915}
+  rotationOffset: {x: 15.623, y: 187.833, z: -0.301}
+  positionOffset2: {x: -0.00112, y: 0.002899, z: 0.001075}
+  rotationOffset2: {x: -19.422, y: 172.386, z: -7.989}
+  weaponCombatData: {fileID: 11400000, guid: 6ad0b5e3c4e3fcf40bc66f4c664737be, type: 2}
