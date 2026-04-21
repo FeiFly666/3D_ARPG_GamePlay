@@ -21,9 +21,10 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-  Cost: 50
-  attackRange: 10
-  damageMultiplier: 2
+  Cost: 150
+  attackLength: 0
+  attackWidth: 0
+  damageMultiplier: 1.2
   poiseMultiplier: 2
   duration: 10
   multiplier: 1

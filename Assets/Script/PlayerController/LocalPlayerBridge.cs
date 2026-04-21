@@ -32,7 +32,7 @@ public class LocalPlayerBridge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        controller.SetInput(input.Move, input.IsRunning, input.IsChangeWeapon, input.IsAttack, input.IsBlocking, input.IsPowerUp);
+        controller.SetInput(input.Move, input.IsRunning, input.IsChangeWeapon, input.IsAttack, input.IsBlocking, input.IsPowerUp, input.IsChangeItem, input.IsUseItem);
 
         if(input.IsLockOnPressed)
         {

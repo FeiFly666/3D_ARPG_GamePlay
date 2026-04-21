@@ -31,7 +31,12 @@ public class PlayerController : CharacterBase, IInterruptible, ICounterable
     public bool InputChangeWeapon;
     private bool weaponChanged = false;
 
+    public bool InputChangeItem;
+    private bool itemChanged = false;
+
     public bool InputAttack;
+
+    public bool InputUseItem;
 
     public bool InputPowerUp;
 
@@ -51,7 +56,7 @@ public class PlayerController : CharacterBase, IInterruptible, ICounterable
         stateMachine.Initialize<PlayerIdleState>();
         Init();
     }
-    public void SetInput(Vector2 move, bool run ,bool weaponChange, bool attack, bool blocking, bool powerUP)
+    public void SetInput(Vector2 move, bool run ,bool weaponChange, bool attack, bool blocking, bool powerUP, bool itemChange, bool useItem)
     {
         InputMove = move;
         InputRun = run;
@@ -59,6 +64,9 @@ public class PlayerController : CharacterBase, IInterruptible, ICounterable
         InputAttack = attack;
         InputBlocking = blocking;
         InputPowerUp = powerUP;
+        InputChangeItem = itemChange;
+        InputUseItem = useItem;
+
     }
     private void Update()
     {
@@ -72,6 +80,7 @@ public class PlayerController : CharacterBase, IInterruptible, ICounterable
 
         UpdateAnimator();
         stateMachine.Update();
+        ItemChangeLogic();
     }
     private void UpdateTimer()
     {
@@ -131,6 +140,33 @@ public class PlayerController : CharacterBase, IInterruptible, ICounterable
         else if(!InputChangeWeapon)
         {
             weaponChanged = false;
+        }
+    }
+
+    public void ItemChangeLogic()
+    {
+        if (InputChangeItem && !itemChanged)
+        {
+            currentItemIndex = (currentItemIndex + 1) % items.Count;
+
+            if(items.Count > 0)
+            {
+                ItemData newData = items[currentItemIndex];
+
+                ItemCtrl.ChangeItem(newData);
+            }
+            itemChanged = true;
+        }
+        else if (!InputChangeItem)
+        {
+            itemChanged = false;
+        }
+    }
+    public void UseItemLogic()
+    {
+        if(InputUseItem)
+        {
+            ItemCtrl.UseItem();
         }
     }
 

@@ -43,7 +43,7 @@ public static class VFXHelper
             instance = Manager.Pool.GetGameObject<EffectObject>(prefabObj.GetInstanceID());
             if (instance == null) { return; }
         }
-        instance.transform.SetParent(player, false);
+        instance.transform.SetParent(owner, false);
 
         instance.transform.localPosition = effect.position;
         //instance.transform.eulerAngles = effect.rotation;

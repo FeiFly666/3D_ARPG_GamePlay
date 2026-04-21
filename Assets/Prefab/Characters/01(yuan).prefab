@@ -89,9 +89,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7214268553506691222, guid: 2a7deedc2af36cc4795091ae32e860c3, type: 3}
+      propertyPath: items.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214268553506691222, guid: 2a7deedc2af36cc4795091ae32e860c3, type: 3}
       propertyPath: weapons.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7214268553506691222, guid: 2a7deedc2af36cc4795091ae32e860c3, type: 3}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7729e9707c0490a468d2ce84be60563a, type: 2}
+    - target: {fileID: 7214268553506691222, guid: 2a7deedc2af36cc4795091ae32e860c3, type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ab102e842d3565a4c9d0c478476fcdbc, type: 2}
     - target: {fileID: 7214268553506691222, guid: 2a7deedc2af36cc4795091ae32e860c3, type: 3}
       propertyPath: weapons.Array.data[2]
       value: 

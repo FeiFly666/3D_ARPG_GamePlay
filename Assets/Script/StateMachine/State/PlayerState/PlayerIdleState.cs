@@ -49,6 +49,8 @@ namespace Assets.StateMachine.PlayerState
             }
 
             _owner.UseSkillLogic();
+            _owner.UseItemLogic();
+            //_owner.ItemChangeLogic();
             _owner.WeaponChangeLogic();
         }
         public void Exit()

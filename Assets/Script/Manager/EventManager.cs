@@ -8,7 +8,7 @@ public class EventManager : MonoBehaviour
     public enum Event_Type
     {
         Boss_Find_Player,
-        Boss_Lose_Player
+        Boss_Lose_Player,
     }
     public delegate void MyEventHandler(object args);
     private Dictionary<Event_Type, MyEventHandler> _events = new Dictionary<Event_Type, MyEventHandler>();

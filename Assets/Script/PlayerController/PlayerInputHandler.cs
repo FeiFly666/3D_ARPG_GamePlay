@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,11 @@ public class PlayerInputHandler : MonoBehaviour
     public bool IsBlocking { get; private set; }
 
     public bool IsPowerUp { get; private set; }
+
+    public bool IsChangeItem { get; private set; }
+    bool changeItemPressed = false;
+
+    public bool IsUseItem { get; private set; }
 
     private void Awake()
     {
@@ -79,6 +85,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         IsPowerUp = input.Player.PowerUp.IsPressed();
 
+        IsUseItem = input.Player.UseItem.IsPressed();
+
         if(input.Player.LockOn.IsPressed() && !lockOnPressed )
         {
             lockOnPressed = true;
@@ -100,6 +108,17 @@ public class PlayerInputHandler : MonoBehaviour
         {
             changeWeaponPressed = false;
             IsChangeWeapon = false;
+        }
+
+        if(input.Player.ChangeItem.IsPressed() && !changeItemPressed )
+        {
+            changeItemPressed = true;
+            IsChangeItem = true;
+        }
+        else if(!input.Player.ChangeItem.IsPressed())
+        {
+            changeItemPressed = false;
+            IsChangeItem = false;
         }
     }
 }

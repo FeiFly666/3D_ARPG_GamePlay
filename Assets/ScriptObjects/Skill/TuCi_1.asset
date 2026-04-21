@@ -18,13 +18,13 @@ MonoBehaviour:
   animName: TuCi
   skillVFX:
     VFXPrefab: {fileID: 4938925213241501392, guid: a17181c18e2b0db4ea1bf1cef1f3da0f, type: 3}
-    position: {x: -0.004, y: 0, z: 0}
+    position: {x: 0, y: 1, z: 1.2}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
   Cost: 50
   attackLength: 20
   attackWidth: 0.6
   damageMultiplier: 10
-  poiseMultiplier: 10
+  poiseMultiplier: 20
   duration: 10
   multiplier: 1

@@ -9,10 +9,12 @@ using UnityEngine;
 public class StatusController : MonoBehaviour, IDamageable
 {
     private CharacterBase _owner;
+    [SerializeField] private bool DebugPerfectParray = false;
+    [SerializeField] private bool DebugMaxPower = false;
 
     [Header("血量")]
     public int FullHP;
-    public int currentHP;
+    public float currentHP;
 
     [Header("韧性")]
     public float maxPoise = 100f;
@@ -52,7 +54,7 @@ public class StatusController : MonoBehaviour, IDamageable
     public bool IsPowerUp;
 
     [Header("属性")]
-    public int attack;
+    public float attack;
 
     public float attackSpeed = 1.0f;
 
@@ -66,7 +68,7 @@ public class StatusController : MonoBehaviour, IDamageable
     public bool IsPerfectBlock;
     public bool IsBlocking;
     public bool blockedPerfectly;
-    public bool FindEnemy = false;
+    public bool FindEnemy => _owner.lockedTarget != null ;
 
     //事件
     public System.Action<float,float> OnHealthChanged;
@@ -110,7 +112,20 @@ public class StatusController : MonoBehaviour, IDamageable
         HandleStaminaRecovery();
         HandlePoiseRecovery();
         HandlePowerDrecrease();
+
+        if(DebugMaxPower)
+        {
+            currentPower = maxPower;
+        }
     }
+
+    public void RecoverHP(float index)
+    {
+        currentHP = Mathf.Min(FullHP, currentHP + index);
+
+        OnHealthChanged?.Invoke(currentHP, FullHP);
+    }
+
     #region 天下无双相关
     public void PowerUp()
     {
@@ -178,7 +193,7 @@ public class StatusController : MonoBehaviour, IDamageable
             {
                 float recover = staminaRecoverRate * Time.deltaTime;
 
-                if (IsPowerUp) recover *= 2f;
+                if (IsPowerUp) recover *= 1.2f;
 
                 currentStamina += recover;
                 currentStamina = Mathf.Min(currentStamina,maxStamina);
@@ -260,6 +275,15 @@ public class StatusController : MonoBehaviour, IDamageable
     #endregion
 
     #region 韧性相关
+
+    public void RecoverPoise(float amount)
+    {
+        this.currentPoise += amount;
+
+        if(currentPoise > maxPoise) { currentPoise = maxPoise; }
+
+        OnPoiseChanged?.Invoke(currentPoise, maxPoise);
+    }
     public void ReducePoise(float amount)
     {
         this.currentPoise -= amount;
@@ -310,7 +334,7 @@ public class StatusController : MonoBehaviour, IDamageable
     }
 
     #endregion
-    public void TakeDamage(int damage, int poiseDamage, CharacterBase attacker)
+    public void TakeDamage(float damage, int poiseDamage, CharacterBase attacker)
     {
         Vector3 dirToAttacker = (attacker.transform.position - transform.position).normalized;
         dirToAttacker.y = 0;
@@ -321,7 +345,7 @@ public class StatusController : MonoBehaviour, IDamageable
         
         if(!FindEnemy)
         {
-            FindEnemy = true;
+            //FindEnemy = true;
             _owner.SetLockedTarget(attacker);
             if(_owner.characterType == CharacterType.Boss)
             {
@@ -331,7 +355,7 @@ public class StatusController : MonoBehaviour, IDamageable
 
         if(IsBlocking && isFrontal)
         {
-            if(this.IsPerfectBlock)
+            if(this.IsPerfectBlock || this.DebugPerfectParray)
             {
                 //isPerfect = true;
                 blockedSuccessfully = true;
@@ -362,7 +386,7 @@ public class StatusController : MonoBehaviour, IDamageable
             }
             else
             {
-                float staminaCost = poiseDamage * 1.2f;
+                float staminaCost = poiseDamage * 0.8f;
                 float reducePoiseDamage = poiseDamage * 0.4f;
 
                 ReduceStamina(staminaCost);
@@ -391,7 +415,10 @@ public class StatusController : MonoBehaviour, IDamageable
         }
 
         this.currentHP -= damage;
-        this.currentPoise -= poiseDamage;
+        if (!isStagger)
+        {
+            this.currentPoise -= poiseDamage;
+        }
 
         OnStaminaChanged?.Invoke(currentStamina, maxStamina);
         OnPoiseChanged?.Invoke(currentPoise, maxPoise);

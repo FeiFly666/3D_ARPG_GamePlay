@@ -9,6 +9,6 @@ namespace Assets.Combat
 {
     public interface IDamageable
     {
-        void TakeDamage(int damage, int poiseDamage, CharacterBase attacker);
+        void TakeDamage(float damage, int poiseDamage, CharacterBase attacker);
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
   atk: 5
   def: 0
   maxStamina: 100000
-  maxPoise: 450
-  walkSpeed: 2
-  runSpeed: 5
+  maxPoise: 400
+  walkSpeed: 1.5
+  runSpeed: 4.5
   detectDistance: 10

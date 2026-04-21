@@ -38,6 +38,9 @@ namespace Assets.Weapon
         public void SetWeaponOwner(CharacterBase character)
         {
             this.owner = character;
+
+            //currentComboDamageMult = data.weaponCombatData.combatData[0].;
+            currentComboPoiseDamage = data.weaponCombatData.combatData[0].comboPoiseDamage;
         }
         private static Collider[] hitColsBuffer = new Collider[100];
         private void Update()
@@ -78,14 +81,9 @@ namespace Assets.Weapon
         {
             int PoiseDamage = currentComboPoiseDamage;
 
-            if(owner.statusCtrl.IsPowerUp)
+            if(isSkillAttack || owner.statusCtrl.IsPowerUp)
             {
-                PoiseDamage = Mathf.RoundToInt(PoiseDamage * 1.2f);
-            }
-
-            if(isSkillAttack)
-            {
-                PoiseDamage *= Mathf.RoundToInt(PoiseDamage * data.weaponCombatData.skill.poiseMultiplier);
+                PoiseDamage = Mathf.RoundToInt(PoiseDamage * data.weaponCombatData.skill.poiseMultiplier);
             }
 
             for (int i = 0; i < num; i++)
@@ -103,15 +101,16 @@ namespace Assets.Weapon
 
                 if (damageAble != null && !_HitObj.Contains(other.gameObject))
                 {
-                    int damage = CombatCalculate.CalculateDamage(owner, this);
+                    float damage = CombatCalculate.CalculateDamage(owner, this);
 
-                    if(isSkillAttack)
+                    if(isSkillAttack || owner.statusCtrl.IsPowerUp)
                     {
                         damage = Mathf.RoundToInt(damage * data.weaponCombatData.skill.damageMultiplier);
                     }
 
                     damageAble.TakeDamage(damage, PoiseDamage, this.owner);
                     _HitObj.Add(other.gameObject);
+
                     if(!owner.statusCtrl.IsPowerUp)
                     {
                         owner.statusCtrl.IncreasePower(4);

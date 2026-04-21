@@ -11,7 +11,7 @@ namespace Assets.Util
 {
     public static class CombatCalculate
     {
-        public static int CalculateDamage(CharacterBase character, WeaponObject weapon)
+        public static float CalculateDamage(CharacterBase character, WeaponObject weapon)
         {
             return character.statusCtrl.attack + weapon.data.weaponCombatData.weaponDamage + weapon.currentComboDamageMult;
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7931f106fda7bf4fa30717b64fb273b, type: 3}
+  m_Name: Heal2
+  m_EditorClassIdentifier: 
+  Name: "\u6CBB\u7597\u836F\u6C34"
+  Description: "30s\u5185\u6301\u7EED\u6062\u590D\u751F\u547D"
+  coldDown: 120
+  icon: {fileID: 21300000, guid: 59f619980cb77ae429b4e82adb510b2a, type: 3}
+  Buff: {fileID: 11400000, guid: 5792b918a6f970a419946867a4f0c25d, type: 2}

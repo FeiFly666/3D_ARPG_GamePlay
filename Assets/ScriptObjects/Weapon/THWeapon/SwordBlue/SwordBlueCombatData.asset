@@ -18,7 +18,7 @@ MonoBehaviour:
   maleAnimatorOverride: {fileID: 22100000, guid: 2c3a09ffa7cc5bb44822d6a08a961005, type: 2}
   ParrayVFX:
     VFXPrefab: {fileID: 4595738757166166616, guid: ea3b633e8839243459f92f87ddd3c729, type: 3}
-    position: {x: -0.004, y: 0, z: 0}
+    position: {x: -0.5, y: 1, z: 0.8}
     rotation: {x: 90, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
   combatData:
@@ -27,7 +27,7 @@ MonoBehaviour:
     comboStaminaCost: 5
     ComboVFX:
       VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
-      position: {x: 0.005, y: -0.005, z: -0.001}
+      position: {x: 0, y: 1, z: 0}
       rotation: {x: 180, y: 180, z: 8}
       scale: {x: 1, y: 1, z: 1}
   - cancelThreshold: 0.9
@@ -35,7 +35,7 @@ MonoBehaviour:
     comboStaminaCost: 10
     ComboVFX:
       VFXPrefab: {fileID: 2068366364774520939, guid: 99daffa3d66332e4ea98082665f10b4f, type: 3}
-      position: {x: 0.005, y: 0, z: 0}
+      position: {x: 0, y: 1, z: 0}
       rotation: {x: 0, y: 270, z: 0}
       scale: {x: 1, y: 1, z: 1}
   - cancelThreshold: 0.8
@@ -43,7 +43,7 @@ MonoBehaviour:
     comboStaminaCost: 10
     ComboVFX:
       VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
-      position: {x: 0.005, y: -0.001, z: 0}
+      position: {x: 0, y: 1, z: 0}
       rotation: {x: 0, y: 0, z: 180}
       scale: {x: 1, y: 1, z: 1}
   - cancelThreshold: 0.8
@@ -51,7 +51,7 @@ MonoBehaviour:
     comboStaminaCost: 10
     ComboVFX:
       VFXPrefab: {fileID: 1518487527256298387, guid: 8573a1c3eed50c3438eb8c154439e79b, type: 3}
-      position: {x: 0, y: -0.005, z: 0}
+      position: {x: 0, y: 1, z: 0}
       rotation: {x: 0, y: 0, z: 0}
       scale: {x: 1, y: 1, z: 1}
   - cancelThreshold: 1
@@ -59,6 +59,6 @@ MonoBehaviour:
     comboStaminaCost: 20
     ComboVFX:
       VFXPrefab: {fileID: 2068366364774520939, guid: 99daffa3d66332e4ea98082665f10b4f, type: 3}
-      position: {x: 0.0125, y: 0, z: 0}
+      position: {x: 0, y: 1, z: 0}
       rotation: {x: 0, y: 270, z: 0}
       scale: {x: 1, y: 1, z: 1}

@@ -55,6 +55,8 @@ namespace Model
 
         public WeaponController weaponCtrl;
         public StatusController statusCtrl;
+        public BuffController buffCtrl;
+        public ItemController ItemCtrl;
 
         public TargetSystem targetSystem;
 
@@ -67,7 +69,9 @@ namespace Model
         protected Rigidbody rb;
 
         public List<WeaponData> weapons = new List<WeaponData>();
+        public List<ItemData> items = new List<ItemData>();
         [SerializeField] protected int currentWeaponIndex = 0;
+        [SerializeField] protected int currentItemIndex = 0;
 
         protected virtual void Awake()
         {
@@ -93,6 +97,12 @@ namespace Model
             targetSystem = GetComponent<TargetSystem>();
             if(targetSystem == null) { targetSystem = this.AddComponent<TargetSystem>(); }
 
+            buffCtrl = GetComponent<BuffController>();
+            if (buffCtrl == null) { buffCtrl = this.AddComponent<BuffController>(); }
+
+            ItemCtrl = GetComponent<ItemController>();
+            if (ItemCtrl == null) { ItemCtrl = this.AddComponent<ItemController>(); }
+
             //Init();
         }
         protected virtual void Start()
@@ -102,7 +112,6 @@ namespace Model
         protected virtual void OnEnable()
         {
             statusCtrl.Init(this);
-
             //weaponCtrl.Init(this, weapons[currentWeaponIndex]);
         }
         public virtual void Init()
@@ -112,6 +121,13 @@ namespace Model
             weaponCtrl.Init(this, weapons[currentWeaponIndex]);
 
             targetSystem.Init(enemyLayer, obstacleLayer, this);
+
+            buffCtrl.Init(this);
+
+            if (items.Count <= 0) { currentItemIndex = -1; }
+
+            ItemCtrl.Init(this, currentItemIndex == -1 ? null : items[currentItemIndex]);
+
 
         }
         private void InitEnemyLayer()
