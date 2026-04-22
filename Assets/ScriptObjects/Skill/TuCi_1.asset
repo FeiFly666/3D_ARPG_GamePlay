@@ -24,7 +24,7 @@ MonoBehaviour:
   Cost: 50
   attackLength: 20
   attackWidth: 0.6
-  damageMultiplier: 10
+  damageMultiplier: 7
   poiseMultiplier: 20
   duration: 10
   multiplier: 1

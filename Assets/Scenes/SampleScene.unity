@@ -655,13 +655,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1067614942}
-  - {fileID: 1467303748}
   m_Father: {fileID: 604977279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811.1001, y: -387.2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 914.2602, y: -374.91907}
+  m_SizeDelta: {x: 33.245, y: 164.085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266234202
 MonoBehaviour:
@@ -1149,8 +1148,8 @@ MonoBehaviour:
   playerPower: {fileID: 1067614943}
   staminaNormalColor: {r: 0.93333334, g: 0.72156864, b: 0.06666667, a: 1}
   staminaExhaustedColor: {r: 0.6603774, g: 0.24842095, b: 0.034264866, a: 1}
-  powerNormalColor: {r: 0.47058824, g: 0.22352941, b: 0.20784314, a: 1}
-  powerUpColor: {r: 0.7176471, g: 0.043137256, b: 0, a: 1}
+  powerNormalColor: {r: 0.3372549, g: 0.20784314, b: 0.47058824, a: 1}
+  powerUpColor: {r: 0.5254902, g: 0.2509804, b: 0.7529412, a: 1}
 --- !u!1 &608369079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,6 +1749,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5075411997619317730, guid: 44568985901384b48ab1fd02f2c87fb3, type: 3}
+      propertyPath: characterType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2112,7 +2115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657721557771694105, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: characterType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1657721557771694105, guid: 9546ad852f70db14e9855f95ee1f3be2, type: 3}
       propertyPath: weapons.Array.size
@@ -2957,8 +2960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.000017166, y: -0.0007534}
+  m_SizeDelta: {x: 33.245, y: 164.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067614943
 MonoBehaviour:
@@ -2973,7 +2976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.22352941, b: 0.20784314, a: 1}
+  m_Color: {r: 0.5257328, g: 0.252759, b: 0.754717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2984,10 +2987,10 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 2
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1067614944
@@ -3142,81 +3145,6 @@ MonoBehaviour:
   powerNormalColor: {r: 0.39607844, g: 0.105882354, b: 0.5294118, a: 1}
   powerUpColor: {r: 0.5803922, g: 0.18431373, b: 0.7647059, a: 1}
   bossName: {fileID: 454202407}
---- !u!1 &1467303747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1467303748}
-  - component: {fileID: 1467303750}
-  - component: {fileID: 1467303749}
-  m_Layer: 5
-  m_Name: UIPlayerPowerIcon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1467303748
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467303747}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 266234201}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00018310547, y: -2.1}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1467303749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467303747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 348e53a7b4a7aa0428aa86cf08fcd9e4, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1467303750
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467303747}
-  m_CullTransparentMesh: 1
 --- !u!1 &1482771123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072521276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3949,11 +3877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1571788959692001916, guid: d6d4c31d47dcd69408008b04f558c037, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016236429
+      value: 0.000000016236429
       objectReference: {fileID: 0}
     - target: {fileID: 1571788959692001916, guid: d6d4c31d47dcd69408008b04f558c037, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005695432
+      value: -0.000000005695432
       objectReference: {fileID: 0}
     - target: {fileID: 1571788959692001916, guid: d6d4c31d47dcd69408008b04f558c037, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7b29aef3-1fe2-4029-b0d0-565c7075ef35
   characterName: "\u73A9\u5BB6"
-  fullHP: 500
+  fullHP: 400
   atk: 5
   def: 0
   maxStamina: 150

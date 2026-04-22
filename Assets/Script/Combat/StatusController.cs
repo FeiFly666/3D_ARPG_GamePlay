@@ -426,7 +426,7 @@ public class StatusController : MonoBehaviour, IDamageable
 
         _lastHitTime = Time.time;
 
-        if (this.currentHP <= 0)
+        if (this.currentHP <= 0 && _owner.currentState != CharacterState.Dead)
         {
             _owner?.Die();
             return;

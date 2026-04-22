@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 80301e20-c09b-4b8e-b77a-5f5d87c0a4a1
   characterName: Els
-  fullHP: 1200
-  atk: 5
+  fullHP: 2000
+  atk: 18
   def: 0
   maxStamina: 100000
   maxPoise: 400
-  walkSpeed: 1.5
-  runSpeed: 4.5
+  walkSpeed: 2
+  runSpeed: 5
   detectDistance: 10

@@ -85,7 +85,7 @@ namespace Assets.StateMachine.EnemyState
             {
                 if(_owner.UseSkillLogic())
                 {
-                    _skillTimer = Random.Range(1f, 40f);
+                    _skillTimer = Random.Range(1f, 20f);
                     return;
 
                 }

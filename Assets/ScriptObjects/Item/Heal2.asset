@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u6CBB\u7597\u836F\u6C34"
   Description: "30s\u5185\u6301\u7EED\u6062\u590D\u751F\u547D"
-  coldDown: 120
+  coldDown: 90
   icon: {fileID: 21300000, guid: 59f619980cb77ae429b4e82adb510b2a, type: 3}
   Buff: {fileID: 11400000, guid: 5792b918a6f970a419946867a4f0c25d, type: 2}
