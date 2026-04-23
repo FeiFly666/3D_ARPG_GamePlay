@@ -47,7 +47,7 @@ namespace Assets.StateMachine.EnemyState
                 if (_owner.characterType == CharacterType.Boss)
                 {
                     Manager.Event.Execute(EventManager.Event_Type.Boss_Find_Player, this._owner);
-                    _owner.statusCtrl.InvokeUIChange();
+                    //_owner.statusCtrl.InvokeUIChange();
                 }
                 return;
             }

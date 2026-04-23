@@ -34,6 +34,7 @@ public class UIBossStatus : MonoBehaviour
             UnRegisteEvent();
             boss = newBoss;
             RegisteEvent();
+            newBoss.statusCtrl.InvokeUIChange();
         }
     }
     private void RemoveBoss(object args)

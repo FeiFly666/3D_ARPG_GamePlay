@@ -36,7 +36,7 @@ public class StatusController : MonoBehaviour, IDamageable
     public float exhaustedStaminaRecoverDelay = 2f;
     public float normalStaminaRecoverDelay = 0.5f;
 
-    public float staminaRecoverRate = 25f;
+    public float staminaRecoverRate = 18f;
     private float _lastUseStaminaTime;
 
     public bool isExhausted { get; private set; }
@@ -105,6 +105,7 @@ public class StatusController : MonoBehaviour, IDamageable
         OnHealthChanged?.Invoke(currentHP, FullHP);
         OnStaminaChanged?.Invoke(currentStamina, maxStamina);
         OnPoiseChanged?.Invoke(currentPoise, maxPoise);
+        OnPowerChanged?.Invoke(currentPower, maxPower);
     }
 
     private void Update()
@@ -426,9 +427,10 @@ public class StatusController : MonoBehaviour, IDamageable
 
         _lastHitTime = Time.time;
 
-        if (this.currentHP <= 0 && _owner.currentState != CharacterState.Dead)
+        if (this.currentHP <= 0)
         {
-            _owner?.Die();
+            if(_owner.currentState != CharacterState.Dead)
+                _owner?.Die();
             return;
         }
 
