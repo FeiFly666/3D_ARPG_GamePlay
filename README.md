@@ -14,7 +14,7 @@
 
 【注意】本仓库未上传美术资源（材质、动画等）如需要运行请通过以下链接下载
 
-百度网盘：: https://pan.baidu.com/s/1dKaqSSqRupOdDbnh61WNBw?pwd=x8nd
+百度网盘： https://pan.baidu.com/s/1ud-MtSmNQHrb1QqOfvNkIQ?pwd=6dry
 
 ------
 
